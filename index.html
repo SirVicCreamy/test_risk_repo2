@@ -11,15 +11,15 @@
     </form>
 
     <div id="results">
-        <!-- Vulnerable code -->
+        <!-- Secure code -->
         <p>Search results for: <span id="query"></span></p>
     </div>
 
     <script>
-        // Vulnerable to XSS
+        // Secure against XSS
         const urlParams = new URLSearchParams(window.location.search);
         const query = urlParams.get('query');
-        document.getElementById('query').innerHTML = query;
+        document.getElementById('query').textContent = query;
     </script>
 </body>
 </html>
